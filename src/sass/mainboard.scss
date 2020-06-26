@@ -1,0 +1,155 @@
+@import 'style';
+
+.hideEle{
+  display: none;
+}
+.showEle{
+  display: block;
+}
+.grey-bgc{
+  background-color: $background-color-secondary;
+}
+.mainboard-container{
+  min-height: 100vh;
+  border:1px solid transparent;
+  margin-left: 305px;
+  margin-top: 44px;
+  @include displayColumn;
+  align-items: center;
+  justify-content: flex-start;
+  position: relative;
+}
+.main-content{
+  width: 100%;
+  padding: 40px 55px 84px;
+  max-width: 1000px;
+  @include displayColumn;
+}
+
+.main-content-header{
+  margin-bottom: 24px;
+  @include displayRow;
+  h1{
+    font-size:$font-size-xlg;
+    font-weight: $font-weight-bold;
+    line-height: 25px;
+  }
+  p{
+    color:#808080;
+    font-size: $font-size-xs;
+    margin-left: 6px;
+    margin-top: 6px;
+    // align-self: flex-end;
+  }
+}
+
+.add-task{
+  width: 100%;
+  margin-bottom: 30px;
+
+  .add-task-btn{
+    @include displayRow;
+    padding: 4px 0 8px;
+    .plus-icon{
+      @include displayRow;
+      justify-content: center;
+      width: 17px;
+      height: 17px;
+      border-radius: 50%;
+      margin-right: 11px;
+    }
+    .plus-text{
+      font-size: $font-size-md;
+      color:$text-color-secondary;
+      font-size: $font-size-sm;
+    }
+  }
+}
+
+.todo-content{
+  max-width: 360px;
+  margin:3px auto;
+  text-align: center;
+  @include displayColumn;
+  align-items: center;
+
+  .showEle{
+    @include displayColumn;
+    align-items: center;
+  }
+}
+.empty-state-header{
+  font-size:$font-size-lg;
+  color:$text-color-tertiary;
+  margin:8px 0;
+}
+.empty-state-body{
+  margin:8px 0;
+  font-size:$font-size-sm;
+  color:$color-tertiary;
+}
+.empty-state-button{
+  line-height: 17px;
+  padding:6px 12px 7px;
+  margin:20px auto 0;
+  font-size:$font-size-sm;
+  background-color: $color-primary;
+  text-decoration: none;
+  border:1px solid transparent;
+  border-radius: $border-radius;
+  color:$text-color-primary;
+  cursor: pointer;
+}
+.empty-state-tooltip{
+  @include displayRow;
+  align-items: center;
+  justify-content: center;  
+  width: 60%;
+  border: 1px solid $color-tertiary;
+  padding:4px 8px;
+  background-color: $text-color-primary;
+  border-radius: $border-radius;
+  margin-top: 20px;
+
+  .tooltip-icon{
+    @include displayRow;
+    margin-right: 5px;
+  }
+
+  .tooltip-text{
+    display: inline-block;
+    font-size: $font-size-sm;
+  }
+}
+
+.task-state{
+  position: absolute;
+  bottom:0;
+  left:50%;
+  transform: translateX(-50%);
+  padding: 10px 20px;
+  background-color: $text-color-secondary;
+  border-radius: $border-radius;
+  margin-top: 2px;
+  font-size: $font-size-md;
+
+  .state-container{
+    @include displayRow;
+    justify-content: space-evenly;
+    .task-completed{
+      color:$color-secondary;
+      margin-right: 15px;
+    }
+    .undo>button {
+      font-size: $font-size-md;
+      color:$color-primary;
+      margin-right: 15px;
+      cursor: pointer;
+    }
+    .hide>button {
+      font-size: $font-size-md;
+      color:$color-tertiary;
+      cursor: pointer;
+    }
+  }
+}

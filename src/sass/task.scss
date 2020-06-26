@@ -1,0 +1,276 @@
+@import 'style';
+
+.hideEle{
+  display: none;
+}
+.showEle{
+  display: block;
+}
+.task-list-item{
+  font-size: $font-size-md;
+  border-bottom: 1px solid #f0f0f0;
+  width: 100%;
+  max-width: 1000px;
+  padding:4px;
+  @include displayRow;
+  align-items: flex-start;
+  position: relative;
+
+  .item-checkbox{
+    @include displayRow;
+    justify-content: center;
+    margin: 10px 10px 0 0;
+    background-color: transparent;
+    border-color: $border-color;
+    color:$border-color;
+    width: 24px;
+    height: 22px;
+    border: 2px solid $border-color;
+    border-radius: 16px;
+    cursor: pointer;
+
+    &:hover {
+      background-color: hsla(0, 0%,50%,.2);
+    }
+    &:hover .selected .tick-img{
+      display: inline-flex;
+    }
+    .selected{
+      @include displayRow;
+      justify-content: center;
+      align-items: center;
+
+      .tick-img{
+        display: none;
+      }
+    }
+
+  }
+  .redCircle {
+    background-color: rgba(209,69,59,.2);
+    border-color: #d1453b;
+
+    &:hover .tick-img{
+      display: inline-flex;
+      color: #d1453b;
+    }
+
+  }
+  .redCircle:hover{
+    background-color: rgba(209,69,59,.2)   
+
+  }
+  .orgCircle {
+    background-color: rgba(235,137,9,.1);
+    border-color: #eb8909;
+    &:hover .tick-img{
+      display: inline-flex;
+      color: #eb8909;;
+    }
+
+  }
+  .orgCircle:hover{
+    background-color: rgba(235,137,9,.1);
+  }
+  .blueCircle {
+    background-color: rgba(36,111,224,.1);
+    border-color: #246fe0;
+
+    &:hover .tick-img{
+      display: inline-flex;
+      color: #246fe0;
+    }  
+  }
+  .orgCircle:hover{
+    background-color: rgba(36,111,224,.1);
+  }
+  .greyCircle {
+    background-color: transparent;
+    border-color: $border-color;
+    border: 1px solid $border-color;
+
+  }
+
+  .task-list-item-content{
+    @include displayColumn;
+    align-items: space-between;
+    width: 100%;
+
+    padding:8px 0;
+    margin-right: 30px;
+
+    .task-content{
+      width: 100%;
+      text-align: left;
+      font-size:$font-size-md;
+      min-height: 24px;
+      line-height: 24px;
+    }
+
+    .task-content-info-tags{
+      width: 100%;
+      min-height: 16px;
+      @include displayRow;
+      cursor: pointer;
+
+      .task-content-info-project{
+        height: 16px;
+        display: inline-flex;
+        margin-left: auto;
+        margin-right: -30px;
+        display: flex;
+        a {
+          @include displayRow;
+          font-size: $font-size-xs;
+          color:$border-color;
+          text-decoration: none;
+
+          .task-content-info-text{
+            max-width: 200px;
+            margin-right: 4px;
+          }
+        }
+      }
+    }
+  }
+
+  .task-list-item-actions{
+    @include displayRow;
+    position: absolute;
+    justify-content: flex-end;
+    height: 24px;
+    margin-right: -38px;
+    margin-top: 8px;
+    top: 0;
+    right: 0;
+    padding-left: 16px;
+
+    .edit,.comment,.more {
+      opacity:0;
+      @include displayRow;
+      margin-left: 8px;
+      width: 24px;
+      height: 24px;
+    }
+    .more {
+      position: relative;
+      opacity:0;
+    }
+
+    .popover-content {
+      width: 250px;
+      position: absolute;
+      top: 4px;
+      right: 0;
+      padding:0;
+      z-index: 1000;
+      border-radius: $border-radius;
+      box-shadow: 0 2px 10px rgba(0,0,0,.3);
+      text-align: left;
+      font-size: $font-size-sm;
+      background-color: $text-color-primary;
+
+      .menu-list{
+        list-style: none;
+        padding: 4px 0;
+
+        .menu-item{
+          line-height: 24px;
+          padding: 5px 10px;
+          text-decoration: none;
+
+          &:hover {
+            background-color: $background-color-primary;
+            cursor: pointer;
+          }
+
+          .menu-item-action{
+            @include displayRow;
+
+            .menu-item-icon{
+              margin-right: 10px;
+              @include displayRow;
+            }
+  
+            .menu-item-content {
+              @include displayRow;
+  
+            }
+          }
+
+        }
+
+        .menu-separator{
+          border-bottom: 1px solid #ddd;
+          margin: 4px;
+        }
+
+        .section-menu{
+          padding: 4px 10px;
+
+          .section-menu-label{
+            font-size: $font-size-xxs;
+            margin-bottom: 1em;
+          }
+
+          .scheduler-holder{
+            padding: 5px 0;
+
+            .icon-list{
+              @include displayRow;
+
+              .icon-scheduler{
+                border-radius: $border-radius;
+                @include displayRow;
+                justify-content: center;
+                cursor: pointer;
+                margin-left: 18px;
+                // padding:1px;
+                height: 24px;
+                width: 24px;
+
+                &:hover {
+                  background-color: $background-color-primary;
+                }
+              }
+            }
+          }
+        }
+
+        .priority-selector .priority-list{
+          padding: 0;
+          @include displayRow;
+
+          .priority-item{
+            border-radius: $border-radius;
+            @include displayRow;
+            cursor: pointer;
+            margin-left: 18px;
+            height: 24px;
+            width: 24px;
+            padding: 1px;
+            border:1px solid transparent;
+
+            &:hover{
+            background-color: $background-color-primary;
+            }
+          }
+          .is-selected{
+            border-color: #ddd;
+          }
+        }
+
+        .delete-item:hover .menu-item-action{
+          color: #de4c4a;
+        }
+      }
+    }
+  }
+
+  &:hover {
+    .edit,.comment,.more{
+      opacity:1;
+    }
+
+  }
+}

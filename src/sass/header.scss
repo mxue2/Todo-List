@@ -1,0 +1,65 @@
+@import 'style';
+
+// @mixin displayRow {
+//   display:flex;
+//   flex-direction: row;
+//   align-items: center;
+// }
+.header-container{
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 44px;
+  background-color: $color-primary;
+  @include displayRow;
+  align-items: center;
+  z-index: 200;
+  border-bottom:1px solid transparent;
+  padding: 0 42px;
+  margin: 0;
+  justify-content: space-between;
+}
+.header-left,
+.header-right {
+  // height: 100%;
+  @include displayRow;
+  align-items: center;
+
+  // background-color: blue;
+}
+.left-nav-toggle{
+  background-color: $color-primary;
+  color:$text-color-primary;
+  @include displayRow;
+}
+.header-right {
+  width: 20%;
+  position: relative;
+  @include displayRow;
+  justify-content: space-around;
+}
+.search-icon{
+  position: absolute;
+  top: 50%;
+  left: 13%;
+  transform: translateY(-50%);
+  cursor: text;
+}
+.search-input{
+  width: 100%;
+  padding: 5px 0 5px 30px;
+  color:$text-color-primary;
+  outline:none;
+  border:1px solid transparent;
+  border-radius: 3px;
+  background-color:rgba($text-color-primary,.2);
+  &::placeholder{
+    color:$text-color-primary;
+  }
+}
+.plus-task{
+  @include displayRow;
+  align-items: center;
+
+}

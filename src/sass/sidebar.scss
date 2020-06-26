@@ -1,0 +1,66 @@
+@import 'style';
+
+// @mixin displayRow {
+//   display: flex;
+//   align-items: center;
+//   flex-direction: row;
+// }
+.left-menu-container{
+  width: 305px;
+  position: fixed;
+  height: 100%;
+  background-color: $color-secondary;
+  padding-top: 30px;
+  padding-left: 35px;
+  z-index: 199;
+}
+.list-holder{
+  width: 265px;
+  padding-bottom: 30px;
+  // background-color: blue;
+}
+.top-filters{
+  margin: 0;
+  padding: 0;
+  // background-color: green;
+  @include displayColumn;
+  justify-content: center;
+
+
+  li{
+    @include displayRow;
+    align-items: center;
+    min-height: 24px;
+    font-size:$font-size-md;
+    color:$text-color-secondary;
+    list-style: none;
+    cursor: pointer;
+    padding:5px 16px 5px 5px;
+    line-height: 1.25;
+    border-radius: 3px;
+
+    span {
+      width: 28px;
+      height: 24px;
+      display: inline-flex;
+      margin-left: 8px;
+      height: 100%;
+      // background-color: red;
+
+      &:first-child {
+        align-items: center;
+      }
+
+      &:last-child {
+        width: 187px;
+        min-height: 24px;
+        line-height: 24px;
+        vertical-align: top;
+      }
+    }
+  }
+  li:hover{
+    background-color: #fff;
+  }
+
+}

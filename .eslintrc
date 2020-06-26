@@ -1,0 +1,25 @@
+{
+  "parser": "babel-eslint",
+  "extends": ["airbnb", "airbnb/hooks"],
+  "env": {
+    "browser": true,
+    "node": true,
+    "jest": true,
+    "commonjs": true,
+    "es6": true
+  },
+  "rules": {
+    "react/jsx-filename-extension": [1, { "extensions": [".js", ".jsx"] }],
+    "no-console": "off",
+    "arrow-body-style": "off",
+    "no-unused-vars": "off",
+    "react/prop-types": "off",
+    "react/destructuring-assignment": "off",
+    "max-len": [
+      1, {
+          "code": 120,
+          "comments": 100
+      }
+    ]
+  }
+}
